@@ -18,6 +18,8 @@
 		452267891E7E9A5A00D6B3EB /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452267881E7E9A5A00D6B3EB /* SelectUserViewController.swift */; };
 		4522678B1E90D0A800D6B3EB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4522678A1E90D0A800D6B3EB /* User.swift */; };
 		45CA8756493540961148AF62 /* Pods_Snapchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E441DE1024EB611CEE9EB878 /* Pods_Snapchat.framework */; };
+		45CFDCB31E90E5B000D31FF4 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDCB21E90E5B000D31FF4 /* Snap.swift */; };
+		45CFDCB51E90EA6900D31FF4 /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDCB41E90EA6900D31FF4 /* ViewSnapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		452267861E7E90CD00D6B3EB /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		452267881E7E9A5A00D6B3EB /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
 		4522678A1E90D0A800D6B3EB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		45CFDCB21E90E5B000D31FF4 /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		45CFDCB41E90EA6900D31FF4 /* ViewSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		567DEE6C2C62B6D6ABB17BE9 /* Pods-Snapchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat.release.xcconfig"; sourceTree = "<group>"; };
 		E441DE1024EB611CEE9EB878 /* Pods_Snapchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,6 +113,7 @@
 				452267841E7E8AA800D6B3EB /* SnapsViewController.swift */,
 				452267861E7E90CD00D6B3EB /* PictureViewController.swift */,
 				452267881E7E9A5A00D6B3EB /* SelectUserViewController.swift */,
+				45CFDCB41E90EA6900D31FF4 /* ViewSnapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4522678A1E90D0A800D6B3EB /* User.swift */,
+				45CFDCB21E90E5B000D31FF4 /* Snap.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -254,7 +260,9 @@
 				451D52801E7E7608003613E2 /* SignInViewController.swift in Sources */,
 				452267871E7E90CD00D6B3EB /* PictureViewController.swift in Sources */,
 				4522678B1E90D0A800D6B3EB /* User.swift in Sources */,
+				45CFDCB51E90EA6900D31FF4 /* ViewSnapViewController.swift in Sources */,
 				452267891E7E9A5A00D6B3EB /* SelectUserViewController.swift in Sources */,
+				45CFDCB31E90E5B000D31FF4 /* Snap.swift in Sources */,
 				451D527E1E7E7608003613E2 /* AppDelegate.swift in Sources */,
 				452267851E7E8AA800D6B3EB /* SnapsViewController.swift in Sources */,
 			);

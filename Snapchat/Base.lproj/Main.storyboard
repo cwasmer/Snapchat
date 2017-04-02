@@ -35,7 +35,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hoernch" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YWc-DM-mbp">
                                 <rect key="frame" x="62.5" y="185" width="250" height="30"/>
@@ -80,7 +80,7 @@
         <!--Snaps View Controller-->
         <scene sceneID="gmA-b4-7E3">
             <objects>
-                <viewController id="eKf-PP-BmR" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eKf-PP-BmR" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aiu-nf-pi4"/>
                         <viewControllerLayoutGuide type="bottom" id="OVl-cm-2Lx"/>
@@ -88,7 +88,19 @@
                     <view key="view" contentMode="scaleToFill" id="rUv-B9-mkS" customClass="Snaps">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Maq-l4-giA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Maq-l4-giA" firstAttribute="top" secondItem="aiu-nf-pi4" secondAttribute="bottom" id="A3w-pV-UCh"/>
+                            <constraint firstItem="Maq-l4-giA" firstAttribute="leading" secondItem="rUv-B9-mkS" secondAttribute="leadingMargin" id="HuD-CL-qyb"/>
+                            <constraint firstItem="Maq-l4-giA" firstAttribute="trailing" secondItem="rUv-B9-mkS" secondAttribute="trailingMargin" id="XG8-SZ-d1L"/>
+                            <constraint firstItem="OVl-cm-2Lx" firstAttribute="top" secondItem="Maq-l4-giA" secondAttribute="bottom" id="odv-Sw-87O"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XsG-D1-3rv">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="JbP-if-TrP">
@@ -102,10 +114,57 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Maq-l4-giA" id="eOI-qe-LIf"/>
+                        <segue destination="98R-uI-xdc" kind="show" identifier="viewsnapsegue" id="3Ca-Ko-TWY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6N-fC-bJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="109"/>
+            <point key="canvasLocation" x="1725.5999999999999" y="108.39580209895054"/>
+        </scene>
+        <!--View Snap View Controller-->
+        <scene sceneID="rjf-ig-TcF">
+            <objects>
+                <viewController id="98R-uI-xdc" customClass="ViewSnapViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nzO-gC-JxH"/>
+                        <viewControllerLayoutGuide type="bottom" id="0sw-Ph-FiC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PT0-H7-H3t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a stupid label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9t-yw-1ed">
+                                <rect key="frame" x="21" y="636" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hgR-zh-zcn">
+                                <rect key="frame" x="21" y="74" width="333" height="552"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hgR-zh-zcn" secondAttribute="trailing" constant="5" id="3yy-0e-ub0"/>
+                            <constraint firstItem="hgR-zh-zcn" firstAttribute="top" secondItem="nzO-gC-JxH" secondAttribute="bottom" constant="10" id="JT4-ab-XP5"/>
+                            <constraint firstItem="0sw-Ph-FiC" firstAttribute="top" secondItem="A9t-yw-1ed" secondAttribute="bottom" constant="10" id="KlE-Fs-3Vc"/>
+                            <constraint firstItem="hgR-zh-zcn" firstAttribute="leading" secondItem="PT0-H7-H3t" secondAttribute="leadingMargin" constant="5" id="TMo-Zj-1aG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A9t-yw-1ed" secondAttribute="trailing" constant="5" id="VbW-R7-5dg"/>
+                            <constraint firstItem="A9t-yw-1ed" firstAttribute="top" secondItem="hgR-zh-zcn" secondAttribute="bottom" constant="10" id="XXx-kd-Qm5"/>
+                            <constraint firstItem="A9t-yw-1ed" firstAttribute="leading" secondItem="PT0-H7-H3t" secondAttribute="leadingMargin" constant="5" id="ZxB-1R-Z31"/>
+                            <constraint firstItem="A9t-yw-1ed" firstAttribute="centerX" secondItem="PT0-H7-H3t" secondAttribute="centerX" id="bdF-v3-SNL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hgR-zh-zcn" id="t0u-Mn-GDM"/>
+                        <outlet property="label" destination="A9t-yw-1ed" id="h7a-ac-ucO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5u-1e-xiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="842"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="cwT-q6-SJ0">
