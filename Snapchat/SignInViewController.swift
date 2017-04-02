@@ -15,7 +15,6 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func turnUpTapped(_ sender: Any) {
@@ -23,15 +22,19 @@ class SignInViewController: UIViewController {
         FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
             print ("we tried to sign in")
             if error != nil {
-                print ("ERRORRRR \(error)")
+                print ("ERRORRRR \(String(describing: error))")
                 FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                     print ("Tried to create user")
                     if error != nil {
-                        print ("ERRORRRR \(error)")
+                        print ("ERRORRRR \(String(describing: error))")
                     } else {
                         print ("Created user")
+                        
+                        FIRDatabase.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email!)
+                        
+                                            
                         self.performSegue(withIdentifier: "signinsegue", sender: nil)
-
+                        
                     }
                 })
             } else {
